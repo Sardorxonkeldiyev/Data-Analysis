@@ -31,6 +31,7 @@ Dropped technical columns (like `row_num`) used during the cleaning process to k
 ## 📂 Project Structure
 * `data_cleaning_script.sql`: The main SQL script containing all cleaning steps.
 * `layoffs.csv`: The raw dataset used for this project.
+## Data Source: Alex The Analyst's dataset
 
 ---
 *Created by Sardor - Aspiring Data Analyst*
