@@ -1,38 +1,31 @@
-# 📊 World Layoffs Data Cleaning Project
+# 📊 World Layoffs: SQL Data Cleaning & Exploration
 
 ## 📝 Project Overview
-This project involves a comprehensive data cleaning process of a raw "World Layoffs" dataset using **MySQL**. The goal was to transform messy, inconsistent data into a structured and reliable format suitable for further Exploratory Data Analysis (EDA).
-
-## 🛠️ Tools & Technologies Used
-* **Database:** MySQL
-* **Language:** SQL
-* **Key Concepts:** CTEs, Window Functions (ROW_NUMBER), Joins, Data Standardization, Handling Null Values.
-
-## 🚀 Key Steps Performed
-
-### 1. Remove Duplicates
-Identified and removed duplicate entries using the `ROW_NUMBER()` window function partitioned by all columns to ensure data uniqueness.
-
-### 2. Standardize the Data
-* **Trimming:** Removed unnecessary leading/trailing spaces from company names.
-* **Consistency:** Unified industry names (e.g., merging all variations of 'Crypto' into one standard label).
-* **Country Cleanup:** Fixed trailing punctuation in country names (e.g., "United States.").
-
-### 3. Date Formatting
-Converted the `date` column from a `text` format into a proper `DATE` format (`YYYY-MM-DD`) to allow for time-series analysis.
-
-### 4. Handling Null and Blank Values
-* Populated missing `industry` data by performing a **Self-Join** on companies with existing records.
-* Removed rows where both `total_laid_off` and `percentage_laid_off` were null, as they provided no analytical value.
-
-### 5. Final Schema Optimization
-Dropped technical columns (like `row_num`) used during the cleaning process to keep the final table clean and efficient.
+This project is a comprehensive data analysis study using a raw "World Layoffs" dataset. It is divided into two major phases: **Data Cleaning** (preparing the data) and **Exploratory Data Analysis** (extracting insights).
 
 ## 📂 Project Structure
-* `data_cleaning_script.sql`: The main SQL script containing all cleaning steps.
-* `layoffs.csv`: The raw dataset used for this project.
-## Data Source: Alex The Analyst's dataset
+
+### 1. Data Cleaning (`Data_Cleaning_Scripts.sql`)
+In this phase, I transformed the raw dataset into a clean and reliable format. Key steps included:
+* **Removing Duplicates:** Using `ROW_NUMBER()` and CTEs.
+* **Standardization:** Fixing industry names, trimming spaces, and unifying country labels.
+* **Date Conversion:** Formatting text dates into proper SQL `DATE` objects.
+* **Handling Nulls:** Using **Self-Joins** to populate missing information.
+
+### 2. Exploratory Data Analysis (`Exploratory_Data_Analysis.sql`)
+In this phase, I conducted a deep dive into the data to find trends and patterns. 
+* **Note:** This script includes professional comments in **English, Russian, and Uzbek**.
+* **Key Metrics:** Total layoffs by company, industry, and country.
+* **Time Series:** Layoffs trended by year and month.
+* **Advanced Analytics:** Calculating **Rolling Totals** and **Company Rankings** (Top 5 per year) using Window Functions.
+
+## 🛠️ Tools & Technologies
+* **Database:** MySQL
+* **Language:** SQL
+* **Techniques:** CTEs, Window Functions (DENSE_RANK, SUM OVER), Joins, String Functions.
+
+## 📌 Acknowledgments
+This project was inspired by and follows the educational methodology of **Alex The Analyst**. The dataset and core concepts are based on his professional data analysis curriculum.
 
 ---
 *Created by Sardor - Aspiring Data Analyst*
-
